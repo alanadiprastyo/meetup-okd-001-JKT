@@ -103,17 +103,24 @@ okd.i3datacenter.com openshift_node_group_name='node-config-all-in-one'
 ```
 
 #9. Jalankan prereq playbook
+```
 ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml 
+```
 
 #10. jalankan deploy cluster playbook
+```
 ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml 
-
+```
 
 #11. membuat user - di master
+```
 sudo htpasswd /etc/origin/master/htpasswd alan 
+```
 
 #12. memberikan hak akses admin ke user
+```
 oc adm policy add-cluster-role-to-user cluster-admin alan
+```
 
 Ref: 
 https://docs.openshift.com/container-platform/3.3/admin_solutions/user_role_mgmt.html
